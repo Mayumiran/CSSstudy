@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    html {
+        font-size: 15px;
+    }
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        font-family: Helvetica;
+        flex-direction: column;
+    }
+    h1 {
+        font-size: 6rem;
+    }
+    span {
+        display:inline-block;
+    }
+    h1.animate span{
+        animation-name:var(--animation);
+        animation-duration:.4s;
+        animation-timing-function:ease-in-out;
+        animation-delay:var(--delay);
+    }
+    @keyframes jump {
+        0%,100%{
+            transform:translateY(0px);
+        }
+        50%{
+            transform:translateY(-10px);
+        }
+    }
+    @keyframes pop {
+        0%,100% {
+            transform:scale(1);
+        }
+        50% {
+            transform:scale(1.15);
+        }
+    }
+    @keyframes flip {
+        0%,100% {
+            transform: rotateY(0deg);
+        }
+        50% {
+            transform:rotateY(180deg);
+        }
+    }
+    @keyframes blink {
+        0%,100% {
+            color:inherit;
+        }
+        50% {
+            color: orange;
+        }
+    }
+</style>
+<body>
+<h1>CodingStartup</h1>
+<button data-animation="jump">JUMP</button>
+<button data-animation="pop">POP</button>
+<button data-animation="flip">FLIP</button>
+<button data-animation="blink">BLINK</button>
+</body>
+<script>
+    const h1 = document.querySelector('h1');
+    h1.innerHTML = h1.textContent.replace(/\S/g,"<span>$&</span>")
+
+    document.querySelectorAll('span').forEach((span,index) => {
+            span.style.setProperty('--delay',`${index * 0.1}s`)
+        }
+    )
+    document.querySelectorAll('button').forEach(
+        button =>{
+            //循环获取button
+            button.addEventListener('click',e =>{
+                // 通过setproperty设置新的样式 getAttribute获取是那个按钮 以便对应那种样式
+                h1.style.setProperty('--animation',
+                e.target.getAttribute('data-animation'))
+                // 重复点击按钮时先清除样式
+                h1.classList.remove('animate')
+                // 解决浏览器之渲染一次的问题
+                void h1.offsetWidth
+                // 添加名为animate以便触发特效
+                h1.classList.add('animate')
+                })
+        })
+</script>
+</html>
