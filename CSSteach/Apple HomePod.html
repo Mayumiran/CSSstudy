@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HomePod</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Helvetica;
+        }
+        .homepod-section {
+
+        }
+        .other-section {
+            background-color:#eee;
+            height: 3000px;
+        }
+        .description {
+            width: 490px;
+            padding: 80px 50px;
+            box-sizing: border-box;
+            background-color: rgba(0,0,0,.8);
+            border-radius: 20px;
+            text-align: center;
+            color: #fff;
+            margin: 0 auto 100vh;
+        }
+        .description h3 {
+            font-size: 32px;
+            margin: 0;
+            padding: 0;
+        }
+        .description p {
+            font-size: 18px;
+            margin: 12px 0 0;
+        }
+        .homepod-container {
+            width: 100%;
+            height: 100vh;
+            position: sticky;
+            top: 0;
+            z-index: -1;
+        }
+        .homepod {
+            width: 654px;
+            height: 825px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform:translate(-50%, -50%);
+        }
+        .homepod div {
+            width: inherit;
+            height: inherit;
+            background-size: contain;
+            background-position: center center;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .device {
+            background-image: url(https://assets.codepen.io/2002878/homepod.jpg);
+        }
+        .part-1 {
+            background-image: url(https://assets.codepen.io/2002878/homepod_1.jpg);
+            opacity: var(--part-1);
+        }
+        .part-2 {
+            background-image: url(https://assets.codepen.io/2002878/homepod_2.jpg);
+            opacity: var(--part-2);
+        }
+        .part-3 {
+            background-image: url(https://assets.codepen.io/2002878/homepod_3.jpg);
+            opacity: var(--part-3);
+        }
+        .part-4 {
+            background-image: url(https://assets.codepen.io/2002878/homepod_4.jpg);
+            opacity: var(--part-4);
+        }
+        .ending {
+            background-image: url(https://assets.codepen.io/2002878/homepod.jpg);
+            opacity: var(--ending);
+        }
+        .description-container {
+            padding-bottom: 100vh;
+        }
+        .description:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+<section class="homepod-section">
+    <div class="homepod-container">
+        <div class="homepod">
+            <div class="device"></div>
+<!--            快捷键 .part-$*4-->
+            <div class="part-1"></div>
+            <div class="part-2"></div>
+            <div class="part-3"></div>
+            <div class="part-4"></div>
+            <div class="ending"></div>
+        </div>
+    </div>
+     <div class="description-container">
+         <div class="description">
+             <h3>重低音的宽广范围，
+                 <br>感受一下。</h3>
+             <p>Apple 设计的高振幅低音单元在整个扬声器的顶部朝上设置，因而能创造出比传统扬声器更为深远雄厚的低音效果。六麦克风阵列与内置的低音均衡器麦克风协作，
+                 可分析房间环境对低音的响应情况，并作出相应补偿，从而营造出丰富饱满、始终如一的音质。强大的电机驱动振膜，振幅高达 20 毫米，即使在音量较低时，低音效果同样清晰震撼。</p>
+         </div>
+     </div>
+    <div class="description-container">
+         <div class="description">
+             <h3>离得虽远，
+                 <br>却听得真切。</h3>
+             <p>HomePod 内置六个环形排列的麦克风，用来捕捉房间内的各种声音。有了先进的信号处理技术，再加上回声和噪声消除功能，你只要说声“嘿 Siri”，HomePod
+                 就会听到你的呼唤，即使你正在房间的另一端，家里还大声放着音乐，也无需特地提高音量。当 HomePod 识别出“嘿 Siri”之后，你说的话就会被加密并匿名发送至 Apple 服务器，不会与你的 Apple ID 关联。</p>
+         </div>
+     </div>
+    <div class="description-container">
+         <div class="description">
+             <h3>高保真音质，
+                 <br>总环绕在你耳边。</h3>
+             <p>在特制的七波束成形高音单元阵列中，每个单元均配有独立的扩音器，从而带来极佳的方向控制力。这些高音单元置于扬声器的底部，采用折叠号角式设计，
+                 可将音乐源源不断地传向中心，再以 360 度的形式从底部扩出，营造出全环绕式的空间感。这几乎完全消除了先前的平面反射声，带来始终如一的高清音质。</p>
+         </div>
+     </div>
+    <div class="description-container">
+         <div class="description">
+             <h3>给扬声器一个更聪明的大脑。</h3>
+             <p>Apple 设计的 A8 芯片将诸多出色的创新音响技术巧妙融合于 HomePod 之中。先进的信号处理技术，让 Siri 在播放音乐时也能听到你的指令。
+                 录音棚级别的实时处理技术，在避免失真的同时带来出众的低音效果。还有提前一步的高速缓冲，以及对直达声和环境声的高速上混处理。让你每时每刻，都能尽享动人音色。</p>
+         </div>
+     </div>
+    <div class="description-container">
+         <div class="description">
+             <h3>看起来悦目，
+                 <br>听起来悦耳。</h3>
+             <p>HomePod 采用无缝式网眼织物包覆设计，兼具优雅的美学外观和出众的声学性能。它有白色和深空灰色两款可供选择，从任何角度看都精巧雅致，而声波却能自由穿透，宛若无物。</p>
+         </div>
+     </div>
+</section>
+<section class="other-section"></section>
+</body>
+<script>
+    const homepodSection = document.querySelector('.homepod-section')
+    const sectionHeight = homepodSection.getBoundingClientRect().height
+    const html = document.documentElement
+
+    document.addEventListener('scroll', (e) => {
+        let scrolled = html.scrollTop / (sectionHeight - html.clientHeight)
+        console.log(`scrolled: ${scrolled}`)
+
+        homepodSection.style.setProperty('--part-1',calculateOpacity(0.05,0.15,scrolled));
+        homepodSection.style.setProperty('--part-2',calculateOpacity(0.19,0.23,scrolled));
+        homepodSection.style.setProperty('--part-3',calculateOpacity(0.35,0.40,scrolled));
+        homepodSection.style.setProperty('--part-4',calculateOpacity(0.58,0.63,scrolled));
+        homepodSection.style.setProperty('--ending',calculateOpacity(0.80,0.85,scrolled));
+    })
+    function calculateOpacity(start,end,percent) {
+        if (percent - start < 0 )return 0
+        if (percent - end > 0 )return 1
+        return (percent - start) / (end - start)
+    }
+</script>
+</html>
